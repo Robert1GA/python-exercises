@@ -2,7 +2,7 @@
 # occurrence in a string. Use a dictionary.
 #
 # You can iterate over a string one letter at a time using
-# a for loop.
+# a for-loop.
 #
 # for letter in "alpha":
 #   print(letter)
@@ -27,7 +27,18 @@
 # > KeyError: 'foo'
 #
 # Example method call:
-#
 # letter_count('banana')
-#
 # > {'a': 3, 'b': 2}
+
+def letter_count(words):
+    dd = {}
+    words = words.lower()
+    for letter in words:
+        if (letter not in dd):
+            dd[letter] = 1
+        else:
+            dd[letter] += 1
+    return sorted(dd.items())
+
+print(letter_count('banana'))
+print(letter_count('Mississippi'))
